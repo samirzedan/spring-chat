@@ -17,21 +17,21 @@ services:
     depends_on:
       - db
     environment:
-      - ACTIVE_PROFILE=default
-      - DATABASE_URL=jdbc:postgresql://db:5432/${POSTGRES_DB}
-      - DATABASE_USER=${POSTGRES_USER}
-      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+      ACTIVE_PROFILE: default
+      DATABASE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB}
+      DATABASE_USER: ${POSTGRES_USER}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
     networks:
-      - private
       - public
+      - private
     restart: always
   db:
     image: postgres:17.6
     container_name: postgres
     environment:
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - db_data:/var/lib/postgresql/data
     networks:
@@ -39,8 +39,8 @@ services:
     restart: always
 
 networks:
-  private:
   public:
+  private:
 
 volumes:
   db_data:
