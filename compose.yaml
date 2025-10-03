@@ -21,6 +21,7 @@ services:
 #      DATABASE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB}
 #      DATABASE_USER: ${POSTGRES_USER}
 #      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+#      JWT_SECRET: ${JWT_SECRET}
 #    networks:
 #      - public
 #      - private

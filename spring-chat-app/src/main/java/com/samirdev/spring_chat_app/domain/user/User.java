@@ -1,4 +1,4 @@
-package com.samirdev.spring_chat_app.model;
+package com.samirdev.spring_chat_app.domain.user;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -14,19 +14,22 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @NonNull
+    @Column(name = "name", nullable = false, length = 100)
     private String name;
 
-    @Column(name = "email", nullable = false)
+    @NonNull
+    @Column(name = "email", nullable = false, length = 150)
     private String email;
 
+    @NonNull
     @Column(name = "password", nullable = false)
     private String password;
 
