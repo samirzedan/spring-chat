@@ -14,18 +14,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AuthenticationService {
-    private final AuthenticationManager authenticationManager;
-    private final UserRepository userRepository;
     private final TokenService tokenService;
+    private final UserRepository userRepository;
+    private final AuthenticationManager authenticationManager;
 
     public AuthenticationService(
-            AuthenticationManager authenticationManager,
+            TokenService tokenService,
             UserRepository userRepository,
-            TokenService tokenService
+            AuthenticationManager authenticationManager
     ) {
-        this.authenticationManager = authenticationManager;
-        this.userRepository = userRepository;
         this.tokenService = tokenService;
+        this.userRepository = userRepository;
+        this.authenticationManager = authenticationManager;
     }
 
     public LoginResponseDTO login(LoginRequestDTO data) {

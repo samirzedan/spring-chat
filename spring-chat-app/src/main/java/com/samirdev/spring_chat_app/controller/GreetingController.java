@@ -15,7 +15,6 @@ public class GreetingController {
     @MessageMapping("/hello") // Recebe mensagens no destino /app/hello
     @SendTo("/topic/greetings") // Envia o retorno para todos os inscritos em /topic/greetings
     public Greeting greeting(HelloMessage message) throws Exception {
-        Thread.sleep(1000); // Simula um delay
         return new Greeting(message.name());
     }
 }
