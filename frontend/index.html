@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat em Tempo Real</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="chat-container">
+        <div class="header">
+            <p id="status">
+                <span id="status-dot" class="status-dot"></span>
+                <span id="status-text">Desconectado</span>
+            </p>
+        </div>
+
+        <div id="chat-app" class="hidden">
+            <div id="greetings"></div>
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="Digite sua mensagem..." autocomplete="off" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div id="loader-container" class="loader-container">
+            <div class="loader"></div>
+            <p>Conectando ao servidor...</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
