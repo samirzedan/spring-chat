@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Desabilita o logging do STOMP no console
                 stompClient.debug = null;
 
-                stompClient.connect({}, 
+                // stompClient.connect({},
+                stompClient.connect({ Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6InRyZW50aW5pLnNhbWlyQGdtYWlsLmNvbSIsImV4cCI6MTc2MTA3NzA0NX0.piyu02kQgCgqFOB2uZ2QQYt1bKKw3jnNKOpEqi80_OE` },
                     (frame) => resolve(frame), // Sucesso
                     (error) => reject(error)   // Erro
                 );
